@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>YouTube Location Changer</title>
+  <style>
+    :root {
+      --base: #1e1e2e;
+      --surface0: #313244;
+      --text: #cdd6f4;
+      --pink: #f5c2e7;
+      --mauve: #cba6f7;
+      --blue: #89b4fa;
+    }
+
+    body {
+      width: 280px;
+      padding: 20px;
+      background: var(--base);
+      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
+      margin: 0;
+      border-radius: 8px;
+      animation: fadeIn 0.3s ease-out;
+    }
+
+    h3 {
+      margin: 0 0 16px 0;
+      background: linear-gradient(45deg, var(--pink), var(--mauve));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 1.2rem;
+    }
+
+    .input-container {
+      position: relative;
+      margin-bottom: 16px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid var(--surface0);
+      border-radius: 8px;
+      background: var(--surface0);
+      color: var(--text);
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      box-sizing: border-box;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: var(--mauve);
+      box-shadow: 0 0 0 3px rgba(203, 166, 247, 0.2);
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(45deg, var(--mauve), var(--blue));
+      color: var(--base);
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      transform: scale(1);
+    }
+
+    button:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 15px rgba(203, 166, 247, 0.3);
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Success animation */
+    .success {
+      animation: successPulse 0.5s ease;
+    }
+
+    @keyframes successPulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <h3>YouTube Location Changer</h3>
+  <div class="input-container">
+    <input type="text" id="location" placeholder="Enter new location">
+  </div>
+  <button id="save">Save Changes</button>
+  <script src="popup.js"></script>
+</body>
+</html> 
